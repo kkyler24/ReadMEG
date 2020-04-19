@@ -1,4 +1,4 @@
-let fs = require("require");
+import fs from "fs";
 let inquirer = require("inquirer");
 
 
