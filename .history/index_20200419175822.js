@@ -29,17 +29,13 @@ inquirer.prompt([
 
   }
 ])
-.then(function(data) {
+    .then(function(response) {
 
-    var filename = data.name.toLowerCase().split(' ').join('') + ".json";
-  
-    fs.writeFile(filename, JSON.stringify(data, null, '\t'), function(err) {
-  
-      if (err) {
-        return console.log(err);
-      }
-  
-      console.log("Success!");
-  
+        if (response.confirm === response.password) {
+          console.log("Success!");
+        }
+        else {
+          console.log("You forgot your password already?!");
         }
       });
+])
